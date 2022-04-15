@@ -1,0 +1,130 @@
+/* Font Jua */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+/* Font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Rubik:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #D89E9E;
+    height: 100vh;
+}
+
+::selection {
+    background-color: white;
+    color: #D89E9E;
+}
+
+.navbar {
+    font-family: 'Rubik', sans-serif;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, .5);
+    text-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+}
+
+.navbar-brand {
+    font-family: 'Jua', sans-serif;
+    padding-left: 3rem;
+}
+
+.nav-link {
+    transform: translateY(-3px);
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(0);
+}
+
+.kol-mas {
+    height: 70vh;
+}
+
+.kolom-masuk {
+    border-radius: 25px;
+    height: 68vh;
+}
+
+.judul-masuk {
+    border-bottom: solid #E6E6E6;
+    margin-bottom: 1rem;
+}
+
+.teks-masuk h2 {
+    font-size: 3rem;
+    margin-bottom: 1.3rem;
+    font-weight: bold;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+}
+
+.input-data .form-floating {
+    font-weight: 100;
+    background-color: #EFEFEF;
+    color: #979797;
+    font-size: .9rem;
+}
+
+.input-data .form-floating input {
+    border: none;
+    border-bottom: 2px solid #B8B8B8;
+    box-shadow: none;
+}
+
+.tblMasuk {
+    width: 100%;
+    border-radius: 25px;
+    background-color: #D89E9E;
+    color: white;
+    border: none;
+    height: 45px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+    transition: 0.3s ease;
+}
+
+.tblMasuk:hover {
+    transform: translateY(-3px);
+}
+
+.tblMasuk span {
+    font-size: 1.2rem;
+}
+
+.tombol-prev,
+.tombol-next {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+}
+
+.bi-chevron-left,
+.bi-chevron-right {
+    color: #D89E9E;
+}
+
+.bor {
+    border: solid red;
+}
+
+@media (max-width:1200px) {
+    .tombol button {
+        width: 9.5rem;
+        height: 1.8rem;
+    }
+}
+
+@media(max-width: 992px) {
+    .tombol {
+        width: 3rem;
+    }
+
+    .tombol button {
+        width: 9rem;
+        height: 1.8rem;
+    }
+}

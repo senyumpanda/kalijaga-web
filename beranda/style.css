@@ -1,0 +1,125 @@
+/* Font Jua */
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+/* Font Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Rubik:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #D89E9E;
+    height: 100vh;
+}
+
+::selection {
+    background-color: white;
+    color: #D89E9E;
+}
+
+.navbar {
+    font-family: 'Rubik', sans-serif;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, .5);
+    text-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+}
+
+.navbar-brand {
+    font-family: 'Jua', sans-serif;
+    padding-left: 3rem;
+}
+
+.nav-link {
+    transform: translateY(-3px);
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(0);
+}
+
+.nav-link.active {
+    transform: translateY(-3px);
+}
+
+.sisi-kiri {
+    height: 60vh;
+}
+
+.teks h2 {
+    font-size: 2rem;
+    text-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+}
+
+.teks p {
+    font-size: 1rem;
+}
+
+.tombol button {
+    width: 9.7rem;
+    height: 1.8rem;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.tombol button:first-child {
+    margin-right: 10px;
+}
+
+.tombol button:last-child {
+    margin-left: 10px;
+}
+
+.tombol button:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
+    transform: translateY(-5px);
+}
+
+.tombol button a {
+    color: #D89E9E;
+    text-decoration: none;
+}
+
+.tombol-prev,
+.tombol-next {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+}
+
+.bi-chevron-left,
+.bi-chevron-right {
+
+    color: #D89E9E;
+}
+
+.bor {
+    border: solid red;
+}
+
+@media (max-width:1200px) {
+    .tombol button {
+        width: 9.5rem;
+        height: 1.8rem;
+    }
+}
+
+@media(max-width: 992px) {
+    .tombol {
+        width: 3rem;
+    }
+
+    .tombol button {
+        width: 9rem;
+        height: 1.8rem;
+    }
+}
