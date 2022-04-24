@@ -11,8 +11,9 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #D89E9E;
     height: 100vh;
+    opacity: 0;
+    animation: body-load 250ms ease-in-out 300ms forwards;
 }
 
 ::selection {
@@ -24,20 +25,29 @@ body {
     font-family: 'Rubik', sans-serif;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, .5);
     text-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+    opacity: 0;
+    animation: nav-load 500ms ease-out 700ms forwards;
 }
 
 .navbar-brand {
     font-family: 'Jua', sans-serif;
     padding-left: 3rem;
+    opacity: 0;
+    animation: nav-title 1s ease-in 1s forwards;
+}
+
+.nav-item {
+    opacity: 0;
+    animation: nav-menu 1s ease-out 1.5s forwards;
 }
 
 .nav-link {
-    transform: translateY(-3px);
+    transform: translateY(0);
     transition: 0.3s ease;
 }
 
 .nav-link:hover {
-    transform: translateY(0);
+    transform: translateY(3px);
 }
 
 .nav-link.active {
@@ -51,10 +61,14 @@ body {
 .teks h2 {
     font-size: 2rem;
     text-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+    opacity: 0;
+    animation: teks-h2-load 1s ease 1.8s forwards;
 }
 
 .teks p {
     font-size: 1rem;
+    opacity: 0;
+    animation: teks-p-load 1s ease 2s forwards;
 }
 
 .tombol button {
@@ -71,10 +85,14 @@ body {
 
 .tombol button:first-child {
     margin-right: 10px;
+    opacity: 0;
+    animation: tblBut-load-awal 1.2s ease-out 2s forwards;
 }
 
 .tombol button:last-child {
     margin-left: 10px;
+    opacity: 0;
+    animation: tblBut-load-akhir 1.2s ease-out 2.3s forwards;
 }
 
 .tombol button:hover {
@@ -85,6 +103,11 @@ body {
 .tombol button a {
     color: #D89E9E;
     text-decoration: none;
+}
+
+.gambar {
+    opacity: 0;
+    animation: gambar-load 1.6s ease-out 2.2s forwards;
 }
 
 .tombol-prev,
@@ -104,6 +127,115 @@ body {
 
 .bor {
     border: solid red;
+}
+
+@keyframes body-load {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        background-color: #D89E9E;
+        opacity: 1;
+    }
+}
+
+@keyframes nav-load {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes nav-title {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes nav-menu {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes teks-h2-load {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes teks-p-load {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes tblBut-load-awal {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes tblBut-load-akhir {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes gambar-load {
+    0% {
+        transform: translate(-200px, -200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
 }
 
 @media (max-width:1200px) {

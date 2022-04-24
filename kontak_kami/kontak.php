@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>tentang kami</title>
+    <title>kontak kami</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,13 +31,13 @@
                         <a class="nav-link" href="../beranda/beranda.html">Beranda</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link active" href="tentang.html">Tentang Kami</a>
+                        <a class="nav-link" href="../tentang_kami/tentang.html">Tentang Kami</a>
                     </li>
                     <li class="nav-item mx-1">
                         <a class="nav-link" href="../produk_kami/produk.html">Produk Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="../kontak_kami/kontak.html">Kontak Kami</a>
+                        <a class="nav-link active" href="kontak.html">Kontak Kami</a>
                     </li>
                 </ul>
             </div>
@@ -50,22 +50,51 @@
         <div class="container tentang-dalam text-white my-5">
             <div class="kolom-tentang">
                 <div class="judul text-center p-5">
-                    <h1>Tentang Kami</h1>
+                    <h1>Kontak Kami</h1>
                 </div>
                 <div class="teks px-5 pt-5 fs-5">
-                    <p>
-                        Kalijaga adalah UMKM yang mengolah bunga mawar
-                        menjadi beberapa produk, seperti nugget, teh, sirup,
-                        parfum, krupuk, pentol.Namun, kami lebih terfokus ke pembuatan
-                        sirup dan teh
-                    </p>
-                    <p>
-                        Kami muncul saat produk pertama kami teh mawar sangat diminati
-                        beberapa orang pada tahun 2017 sehingga pada tahun 2018,
-                        kami menamai perkumpulan kami dengan Kalijaga Manajemen
-                    </p>
+                    <ul class="mt-3 w-75 text-center mx-auto">
+                        <li class="mb-3">
+                            <h5>Hubungi Kami via:</h5>
+                        </li>
+                        <div class="area-kontak d-flex justify-content-center">
+                            <!-- Area 1 -->
+                            <div class="area-satu me-3">
+                                <li class="d-flex align-content-center">
+                                    <i class="bi bi-telegram"></i>
+                                    <p class="ms-3">0877-2344-1234</p>
+                                </li>
+                                <li class="d-flex align-content-center">
+                                    <i class="bi bi-whatsapp"></i>
+                                    <p class="ms-3">0877-2344-1234</p>
+                                </li>
+                                <li class="d-flex align-content-center">
+                                    <i class="bi bi-telephone"></i>
+                                    <p class="ms-3">0877-2344-1234</p>
+                                </li>
+                            </div>
+                            <!-- Akhir Area 1 -->
+                            <!-- Area 2 -->
+                            <div class="area-dua ms-3">
+                                <li class="d-flex align-content-center">
+                                    <i class="bi bi-instagram"></i>
+                                    <p class="ms-3">UKMkalijaga</p>
+                                </li>
+                                <li class="d-flex align-content-center">
+                                    <i class="bi bi-facebook"></i>
+                                    <p class="ms-3">UKMkalijaga</p>
+                                </li>
+                                <li class="d-flex align-content-center">
+                                    <i class="bi bi-envelope"></i>
+                                    <p class="ms-3">ukmkalijaga@gmail.com</p>
+                                </li>
+                            </div>
+                            <!-- Akhir Area 2 -->
+                        </div>
+                    </ul>
                 </div>
             </div>
+            <p class="p-ket text-center">*Melayani saat hari kerja</p>
         </div>
     </div>
     <!-- Akhir Info Tentang Kami -->

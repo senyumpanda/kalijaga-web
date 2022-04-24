@@ -11,8 +11,9 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #D89E9E;
     height: 100vh;
+    opacity: 0;
+    animation: body-load 250ms ease-in-out 300ms forwards;
 }
 
 ::selection {
@@ -24,11 +25,20 @@ body {
     font-family: 'Rubik', sans-serif;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, .5);
     text-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+    opacity: 0;
+    animation: nav-load 500ms ease-out 700ms forwards;
 }
 
 .navbar-brand {
     font-family: 'Jua', sans-serif;
     padding-left: 3rem;
+    opacity: 0;
+    animation: nav-title 1s ease-in 1s forwards;
+}
+
+.nav-item {
+    opacity: 0;
+    animation: nav-menu 1s ease-out 1.5s forwards;
 }
 
 .nav-link {
@@ -52,10 +62,14 @@ body {
     background-color: rgba(169, 94, 94, 0.56);
     border-radius: 35px;
     height: 60vh;
+    opacity: 0;
+    animation: ten-dal-load 1s ease-in-out 1.5s forwards;
 }
 
 .judul {
     border-bottom: 1px solid #DAA7A7;
+    opacity: 0;
+    animation: judul-load 1.5s ease-in 1.7s forwards;
 }
 
 .judul h1 {
@@ -66,10 +80,97 @@ body {
 
 .teks p {
     line-height: 2rem;
+    opacity: 0;
+    animation: p-load 1.5s ease-in 2s forwards;
 }
 
 .bor {
     border: solid red;
+}
+
+@keyframes body-load {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        background-color: #D89E9E;
+        opacity: 1;
+    }
+}
+
+@keyframes nav-load {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes nav-title {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes nav-menu {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes ten-dal-load {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes judul-load {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes p-load {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @media (max-width:1200px) {

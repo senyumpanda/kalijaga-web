@@ -18,7 +18,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bb-shadow" style="background-color: #CD7575;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="font-size: 32px;">Kalijaga</a>
+            <a class="navbar-brand" style="font-size: 32px; cursor: default;">Kalijaga</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -28,16 +28,16 @@
                 style="font-size: 16px; padding-right: 5rem;">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="../beranda/beranda.php">Beranda</a>
+                        <a class="nav-link" href="../beranda/beranda.html">Beranda</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link active" href="../tentang_kami/">Tentang Kami</a>
+                        <a class="nav-link" href="../tentang_kami/tentang.html">Tentang Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="produk.php">Produk Kami</a>
+                        <a class="nav-link active" href="produk.html">Produk Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="#">Kontak Kami</a>
+                        <a class="nav-link" href="../kontak_kami/kontak.html">Kontak Kami</a>
                     </li>
                 </ul>
             </div>
@@ -45,30 +45,130 @@
     </nav>
     <!-- Akhir Navbar -->
 
-    <!-- Info Tentang Kami -->
+    <!-- Info Produk Kami -->
     <div class="container-fluid tentang-luar mt-5">
+        <!-- Produk 1 -->
         <div class="container tentang-dalam text-white my-5">
             <div class="kolom-tentang">
-                <div class="judul text-center p-5">
-                    <h1>Tentang Kami</h1>
-                </div>
-                <div class="teks px-5 pt-5 fs-5">
-                    <p>
-                        Kalijaga adalah UMKM yang mengolah bunga mawar
-                        menjadi beberapa produk, seperti nugget, teh, sirup,
-                        parfum, krupuk, pentol.Namun, kami lebih terfokus ke pembuatan
-                        sirup dan teh
-                    </p>
-                    <p>
-                        Kami muncul saat produk pertama kami teh mawar sangat diminati
-                        beberapa orang pada tahun 2017 sehingga pada tahun 2018,
-                        kami menamai perkumpulan kami dengan Kalijaga Manajemen
-                    </p>
+                <div class="row p-3">
+                    <div class="col-6 ps-5 mt-2">
+                        <h2 class="text-center fw-bold judul-produk p-3">Teh Bunga Mawar</h2>
+                        <h3 class="mt-3 fw-bold">
+                            Satu-satunya olahan teh <br>
+                            berbahan dasar bunga mawar <br>
+                            yang menyehatkan
+                        </h3>
+                        <p class="mt-3">
+                            kami membuatnya dengan bunga mawar pilihan
+                            dan kita olah dengan cara tradisional tentunya
+                            higienis dan terjamin
+                        </p>
+                        <div class="tombol-produk mt-5 w-75 mx-auto d-flex justify-content-between">
+                            <button type="submit" name="beli">
+                                <span>
+                                    <a href="">Beli</a>
+                                </span>
+                            </button>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill">
+                                    <span>264</span>
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 offset-1 d-flex justify-content-center align-content-center mt-5 gbr">
+                        <img src="../img/teh.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- Akhir Produk 1 -->
+        <!-- Produk 2 -->
+        <div class="container tentang-dalam text-white my-5">
+            <div class="kolom-tentang">
+                <div class="row p-3">
+                    <div class="col-6 d-flex justify-content-center align-content-center mt-5 gbr">
+                        <img src="../img/teh2.png" alt="">
+                    </div>
+                    <div class="col-6 ps-5 mt-2">
+                        <h2 class="text-center fw-bold judul-produk p-3">Teh Bunga Mawar</h2>
+                        <h3 class="mt-3 fw-bold">
+                            Satu-satunya olahan teh <br>
+                            berbahan dasar bunga mawar <br>
+                            yang menyehatkan
+                        </h3>
+                        <p class="mt-3">
+                            kami membuatnya dengan bunga mawar pilihan
+                            dan kita olah dengan cara tradisional tentunya
+                            higienis dan terjamin
+                        </p>
+                        <div class="tombol-produk mt-5 w-75 mx-auto d-flex justify-content-between">
+                            <button type="submit" name="beli">
+                                <span>
+                                    <a href="">Beli</a>
+                                </span>
+                            </button>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill">
+                                    <span>104</span>
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Akhir Produk 2 -->
+        <!-- Produk 3 -->
+        <div class="container tentang-dalam text-white my-5">
+            <div class="kolom-tentang">
+                <div class="row p-3">
+                    <div class="col-6 ps-5 mt-2">
+                        <h2 class="text-center fw-bold judul-produk p-3">Teh Bunga Mawar</h2>
+                        <h3 class="mt-3 fw-bold">
+                            Satu-satunya olahan teh <br>
+                            berbahan dasar bunga mawar <br>
+                            yang menyehatkan
+                        </h3>
+                        <p class="mt-3">
+                            kami membuatnya dengan bunga mawar pilihan
+                            dan kita olah dengan cara tradisional tentunya
+                            higienis dan terjamin
+                        </p>
+                        <div class="tombol-produk mt-5 w-75 mx-auto d-flex justify-content-between">
+                            <button type="submit" name="beli">
+                                <span>
+                                    <a href="">Beli</a>
+                                </span>
+                            </button>
+                            <div class="rating">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill">
+                                    <span>124</span>
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 offset-1 d-flex justify-content-center align-content-center mt-5 gbr">
+                        <img src="../img/parfum.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Akhir Produk 3 -->
     </div>
-    <!-- Akhir Info Tentang Kami -->
+    <!-- Akhir Info Produk Kami -->
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

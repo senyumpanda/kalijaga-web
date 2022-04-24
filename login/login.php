@@ -1,3 +1,25 @@
+<?php 
+require("../connectDB/db.php");
+session_start();
+
+$pass = true;
+
+if(isset($_POST["login"])){
+
+    if(masuk($_POST) == 1){
+        header("Location: ../beranda/beranda.php?a=1");
+        exit;
+    }
+
+    else if(masuk($_POST) == 2){
+        header("Location: ../beranda/beranda.php?c=1");
+        exit;
+    }
+
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -18,7 +40,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bb-shadow" style="background-color: #CD7575;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="font-size: 32px;">Kalijaga</a>
+            <a href="../beranda/beranda.php" class="navbar-brand" style="font-size: 32px; ">Kalijaga</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -28,16 +50,13 @@
                 style="font-size: 16px; padding-right: 5rem;">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="../beranda/beranda.html">Beranda</a>
+                        <a class="nav-link" href="../tentang_kami/tentang.php">Tentang Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="#">Tentang Kami</a>
+                        <a class="nav-link" href="../produk_kami/produk.php">Produk Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="#">Produk Kami</a>
-                    </li>
-                    <li class="nav-item mx-1">
-                        <a class="nav-link" href="#">Kontak Kami</a>
+                        <a class="nav-link" href="../kontak_kami/kontak.php">Kontak Kami</a>
                     </li>
                 </ul>
             </div>
@@ -51,39 +70,42 @@
             <!-- Masuk -->
             <div class="col-lg-4 offset-lg-1 col-md-12 kol-mas">
                 <div class="kolom-masuk bg-white p-4 d-flex justify-content-evenly flex-column">
+                    <form action="" method="POST">
                     <div class="container judul-masuk">
-                        <div class="teks-masuk">
-                            <h2 class="text-black mb-5 mt-1">Masuk</h2>
+                            <div class="teks-masuk">
+                                <h2 class="text-black mb-5 mt-1">Masuk</h2>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Input Data Masuk -->
-                    <div class="input-data mx-2 mb-4 mt-3">
-                        <div class="form-floating mb-4">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Email</label>
+                        <!-- Input Data Masuk -->
+                        <div class="input-data mx-2 mb-4 mt-3">
+                            <div class="form-floating mb-4">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    autocomplete="off" required>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <input type="password" class="form-control" id="password" name="password"
+                                    autocomplete="off" required>
+                                <label for="password">Password</label>
+                            </div>
                         </div>
-                        <div class="form-floating mb-4">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                            <label for="floatingPassword">Password</label>
+                        <!-- Akhir Input Data Masuk -->
+
+                        <!-- Alternative Daftar -->
+                        <div id="emailHelp border-bottom-2" class="form-text text-center mt-3 mb-3">
+                            Belum memiliki akun?
+                            <a class="text-black" href="../daftar/daftar.php">Daftar</a>
                         </div>
-                    </div>
-                    <!-- Akhir Input Data Masuk -->
+                        <!-- Akhir Alternative Daftar -->
 
-                    <!-- Alternative Daftar -->
-                    <div id="emailHelp border-bottom-2" class="form-text text-center mt-3 mb-3">
-                        Sudah memiliki akun?
-                        <a class="text-black" href="#">Login disini</a>
-                    </div>
-                    <!-- Akhir Alternative Daftar -->
-
-                    <!-- Tombol Masuk -->
-                    <div class="tombol mt-53">
-                        <button type="submit" name="daftar" class="tblMasuk">
-                            <span>Masuk</span>
-                        </button>
-                    </div>
-                    <!-- Akhir Tombol Masuk -->
-
+                        <!-- Tombol Masuk -->
+                        <div class="tombol mt-53">
+                            <button type="submit" name="login" class="tblMasuk">
+                                <span>Masuk</span>
+                            </button>
+                        </div>
+                        <!-- Akhir Tombol Masuk -->
+                    </form>
                 </div>
             </div>
             <!-- Akhir Masuk -->
@@ -94,13 +116,13 @@
                     <div id="gambarProduk" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="../img/teh.png" class="d-block w-100" alt="...">
+                                <img src="../img/teh.png" class="d-block w-75 mx-auto" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="../img/teh.png" class="d-block w-100" alt="...">
+                                <img src="../img/parfum.png" class="d-block w-75 mx-auto" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="../img/teh.png" class="d-block w-100" alt="...">
+                                <img src="../img/teh2.png" class="d-block w-75 mx-auto" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#gambarProduk"

@@ -50,78 +50,50 @@ body {
     transform: translateY(0);
 }
 
-.kol-mas {
-    height: 70vh;
-    opacity: 0;
-    animation: kol-mas-load 1.2s ease 1.5s forwards;
-}
-
-.kolom-masuk {
-    border-radius: 25px;
-    height: 68vh;
-}
-
-.judul-masuk {
-    border-bottom: solid #E6E6E6;
-    margin-bottom: 1rem;
-}
-
-.teks-masuk h2 {
-    font-size: 3rem;
-    margin-bottom: 1.3rem;
-    font-weight: bold;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, .5);
-}
-
-.input-data .form-floating {
-    font-weight: 100;
-    background-color: #EFEFEF;
-    color: #979797;
-    font-size: .9rem;
-}
-
-.input-data .form-floating input {
-    border: none;
-    border-bottom: 2px solid #B8B8B8;
-    box-shadow: none;
-}
-
-.tblMasuk {
-    width: 100%;
-    border-radius: 25px;
-    background-color: #D89E9E;
-    color: white;
-    border: none;
-    height: 45px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, .5);
-    transition: 0.3s ease;
-}
-
-.tblMasuk:hover {
+.nav-link.active {
     transform: translateY(-3px);
 }
 
-.tblMasuk span {
-    font-size: 1.2rem;
+.tentang-luar {
+    height: 70vh;
 }
 
-.gambar {
+.tentang-dalam {
+    background-color: rgba(169, 94, 94, 0.56);
+    border-radius: 35px;
+    height: 60vh;
     opacity: 0;
-    animation: gambar-load 1.3s ease-in-out 2s forwards;
+    animation: ten-dal-load 1s ease-in-out 1.5s forwards;
 }
 
-.tombol-prev,
-.tombol-next {
-    width: 2.5rem;
-    height: 2.5rem;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+.judul {
+    border-bottom: 1px solid #DAA7A7;
 }
 
-.bi-chevron-left,
-.bi-chevron-right {
-    color: #D89E9E;
+.judul h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+    opacity: 0;
+    animation: teks-h1-load 1.3s ease 2s forwards;
+}
+
+.teks {
+    opacity: 0;
+    animation: teks-load 1.3s ease 2.2s forwards;
+}
+
+.teks li {
+    list-style: none;
+}
+
+.kolom-tentang {
+    height: 55vh;
+}
+
+.p-ket {
+    opacity: 0;
+    animation: p-ket-load 1.3s ease-out 2.5s forwards;
 }
 
 .bor {
@@ -177,29 +149,54 @@ body {
     }
 }
 
-@keyframes kol-mas-load {
+@keyframes ten-dal-load {
     0% {
-        opacity: 0;
         transform: translateX(-100%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes gambar-load {
-    0% {
-        transform: translate(200px, -200px);
         opacity: 0;
     }
 
     100% {
-        transform: translate(0, 0);
+        transform: translateX(0);
         opacity: 1;
     }
 }
+
+@keyframes teks-h1-load {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes teks-load {
+    0% {
+        transform: translateY(-80%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes p-ket-load {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 
 @media (max-width:1200px) {
     .tombol button {

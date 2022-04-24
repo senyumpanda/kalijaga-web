@@ -1,3 +1,17 @@
+<?php 
+session_start();
+$_SESSION["admin"] = false;
+$_SESSION["customer"] = false;
+
+if (isset($_GET["a"])) {
+    $_SESSION["admin"] = true;
+} else if (isset($_GET["c"])) {
+    $_SESSION["customer"] = true;
+}
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -18,7 +32,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bb-shadow" style="background-color: #CD7575;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="font-size: 32px;">Kalijaga</a>
+            <a href="beranda.php" class="navbar-brand" style="font-size: 32px;">Kalijaga</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -26,10 +40,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent"
                 style="font-size: 16px; padding-right: 5rem;">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item mx-1">
-                        <a class="nav-link active" href="beranda.php">Beranda</a>
-                    </li>
+                <ul class="navbar-nav d-flex align-items-center ms-auto mb-2 mb-lg-0">
                     <li class="nav-item mx-1">
                         <a class="nav-link" href="../tentang_kami/tentang.php">Tentang Kami</a>
                     </li>
@@ -37,8 +48,23 @@
                         <a class="nav-link" href="../produk_kami/produk.php">Produk Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="#">Kontak Kami</a>
+                        <a class="nav-link pe-3" href="../kontak_kami/kontak.php">Kontak Kami</a>
                     </li>
+                    <?php if($_SESSION["admin"]) : ?>
+                    <li class="nav-item mx-1">
+                        <a class="text-white" href="../admin/admin.php">
+                            <i class="bi bi-person-circle fs-1" style="text-shadow: 0 0 15px #D89E9E;"></i>
+                        </a>
+                    </li>
+                    <?php endif;  ?>
+
+                    <?php if($_SESSION["customer"]) : ?>
+                    <li class="nav-item mx-1">
+                        <a class="text-white" href="../customer/customer.php">
+                            <i class="bi bi-person-circle fs-1" style="text-shadow: 0 0 15px #D89E9E;"></i>
+                        </a>
+                    </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -49,7 +75,7 @@
     <div class="container mt-3">
         <div class="row pt-5 pb-5">
             <!-- Deskripsi Beranda -->
-            <div class="col-lg-4 offset-lg-1 col-md-12">
+            <div class="col-lg-5 col-md-12 pt-5">
                 <div class="sisi-kiri pt-5 mt-5">
                     <!-- Teks -->
                     <div class="teks text-white mb-3">
@@ -65,11 +91,13 @@
                     </div>
                     <!-- Akhir Teks -->
 
+                    <?php if(!($_SESSION["customer"] OR $_SESSION["admin"])) : ?>
+
                     <!-- Tombol Daftar dan Login -->
                     <div class="tombol me-auto w-75 w-sm-50 mt-lg-3 p-lg-2 d-flex justify-content-around">
                         <button type="submit" name="daftar">
                             <span>
-                                <a href="../daftar/daftar.phpl">
+                                <a href="../daftar/daftar.php">
                                     Daftar
                                 </a>
                             </span>
@@ -83,23 +111,26 @@
                         </button>
                     </div>
                     <!-- Akhir Tombol Daftar dan Login -->
+
+                    <?php endif; ?>
+
                 </div>
             </div>
             <!-- Akhir Deskripsi Beranda -->
 
             <!-- Produk -->
             <div class="col-lg-6 offset-lg-1 col-md-12">
-                <div class="gambar p-5">
+                <div class="gambar p-3">
                     <div id="gambarProduk" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="../img/teh.png" class="d-block w-100" alt="...">
+                                <img src="../img/teh.png" class="d-block w-75 mx-auto" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="../img/teh.png" class="d-block w-100" alt="...">
+                                <img src="../img/parfum.png" class="d-block w-75 mx-auto" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="../img/teh.png" class="d-block w-100" alt="...">
+                                <img src="../img/teh2.png" class="d-block w-75 mx-auto" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#gambarProduk"

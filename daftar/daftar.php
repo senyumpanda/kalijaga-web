@@ -1,3 +1,20 @@
+<?php 
+require("../connectDB/db.php");
+session_start();
+
+$pass = true;
+
+if(isset($_POST["daftar"])){
+
+    if(registrasi($_POST) > 0){
+        header("Location: ../beranda/beranda.php?c=1");
+        exit;
+    }
+
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -18,7 +35,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bb-shadow" style="background-color: #CD7575;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="font-size: 32px;">Kalijaga</a>
+            <a href="../beranda/beranda.php" class="navbar-brand" style="font-size: 32px;">Kalijaga</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -28,16 +45,13 @@
                 style="font-size: 16px; padding-right: 5rem;">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="../beranda/beranda.php">Beranda</a>
+                        <a class="nav-link" href="../tentang_kami/tentang.html">Tentang Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="../tentang_kami/tentang.php">Tentang Kami</a>
+                        <a class="nav-link" href="../produk_kami/produk.html">Produk Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="#">Produk Kami</a>
-                    </li>
-                    <li class="nav-item mx-1">
-                        <a class="nav-link" href="#">Kontak Kami</a>
+                        <a class="nav-link" href="../kontak_kami/kontak.html">Kontak Kami</a>
                     </li>
                 </ul>
             </div>
@@ -58,48 +72,50 @@
                             </p>
                         </div>
                     </div>
-                    <!-- Input Data Registrasi -->
-                    <div class="input-data mx-4 mb-4">
-                        <div class="mb-3">
-                            <input autocomplete="off" type="text" class="form-control" id="nama_depan"
-                                placeholder="Nama Depan">
+                    <form action="" method="POST">
+                        <!-- Input Data Registrasi -->
+                        <div class="input-data mx-4 mb-4">
+                            <div class="mb-3">
+                                <input autocomplete="off" type="text" class="form-control" id="nama_depan"
+                                    placeholder="Nama Depan" name="nama_depan" required>
+                            </div>
+                            <div class="mb-3">
+                                <input autocomplete="off" type="text" class="form-control" id="nama_belakang"
+                                    placeholder="Nama Belakang" name="nama_belakang" required>
+                            </div>
+                            <div class="mb-3">
+                                <input autocomplete="off" type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input autocomplete="off" type="password" class="form-control" id="password"
+                                    placeholder="Password" name="password" required>
+                            </div>
+                            <div class="mb-3">
+                                <input autocomplete="off" type="password" class="form-control" id="password2"
+                                    placeholder="Konfirmasi Password" name="password2" required>
+                            </div>
+                            <div class="form-check" style="color: #979797;">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Saya akan menerima syarat penggunaan dan kebijakan privasi
+                                </label>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <input autocomplete="off" type="text" class="form-control" id="nama_belakang"
-                                placeholder="Nama Belakang">
-                        </div>
-                        <div class="mb-3">
-                            <input autocomplete="off" type="email" class="form-control" id="email" placeholder="Email">
-                        </div>
-                        <div class="mb-3">
-                            <input autocomplete="off" type="password" class="form-control" id="password"
-                                placeholder="Password">
-                        </div>
-                        <div class="mb-3">
-                            <input autocomplete="off" type="password" class="form-control" id="password2"
-                                placeholder="Konfirmasi Password">
-                        </div>
-                        <div class="form-check" style="color: #979797;">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Saya akan menerima syarat penggunaan dan kebijakan privasi
-                            </label>
-                        </div>
-                    </div>
-                    <!-- Akhir Input Data Registrasi -->
+                        <!-- Akhir Input Data Registrasi -->
 
-                    <!-- Tombol Daftar -->
-                    <div class="tombol mb-3">
-                        <button type="submit" name="daftar" class="tblDaftar">
-                            <span>Daftar</span>
-                        </button>
-                    </div>
-                    <!-- Akhir Tombol Daftar -->
+                        <!-- Tombol Daftar -->
+                        <div class="tombol mb-3">
+                            <button type="submit" name="daftar" class="tblDaftar">
+                                Daftar
+                            </button>
+                        </div>
+                        <!-- Akhir Tombol Daftar -->
+                    </form>
 
                     <!-- Alternative Login -->
                     <div id="emailHelp border-bottom-2" class="form-text text-center">
                         Sudah memiliki akun?
-                        <a class="text-black" href="#">Login disini</a>
+                        <a class="text-black" href="../login/login.html">Masuk</a>
                     </div>
                     <!-- Akhir Alternative Login -->
                 </div>
@@ -112,13 +128,13 @@
                     <div id="gambarProduk" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="../img/teh.png" class="d-block w-100" alt="...">
+                                <img src="../img/teh.png" class="d-block w-75 mx-auto" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="../img/teh.png" class="d-block w-100" alt="...">
+                                <img src="../img/parfum.png" class="d-block w-75 mx-auto" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="../img/teh.png" class="d-block w-100" alt="...">
+                                <img src="../img/teh2.png" class="d-block w-75 mx-auto" alt="...">
                             </div>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#gambarProduk"

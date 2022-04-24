@@ -11,8 +11,9 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #D89E9E;
     height: 100vh;
+    opacity: 0;
+    animation: body-load 250ms ease-in-out 300ms forwards;
 }
 
 ::selection {
@@ -24,11 +25,20 @@ body {
     font-family: 'Rubik', sans-serif;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, .5);
     text-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+    opacity: 0;
+    animation: nav-load 500ms ease-out 700ms forwards;
 }
 
 .navbar-brand {
     font-family: 'Jua', sans-serif;
     padding-left: 3rem;
+    opacity: 0;
+    animation: nav-title 1s ease-in 1s forwards;
+}
+
+.nav-item {
+    opacity: 0;
+    animation: nav-menu 1s ease-out 1.5s forwards;
 }
 
 .nav-link {
@@ -46,6 +56,8 @@ body {
 
 .kol-reg {
     height: 70vh;
+    opacity: 0;
+    animation: kol-reg-load 1.2s ease 1.5s forwards;
 }
 
 .kolom-registrasi {
@@ -79,10 +91,16 @@ body {
     font-weight: 100;
 }
 
-.input-data .form-floating:focus,
-.input-data .form-floating:active {
+.input-data input {
     background-color: #EFEFEF;
     color: #979797;
+    transition: 0.8s ease;
+}
+
+.input-data input:focus,
+.input-data input:active {
+    animation: efek-input .5s ease;
+    animation-fill-mode: forwards;
 }
 
 .tombol {
@@ -108,6 +126,11 @@ body {
     transform: translateY(-3px);
 }
 
+.gambar {
+    opacity: 0;
+    animation: gambar-load 1.3s ease-in-out 2s forwards;
+}
+
 .tombol-prev,
 .tombol-next {
     width: 2.5rem;
@@ -125,6 +148,85 @@ body {
 
 .bor {
     border: solid red;
+}
+
+@keyframes body-load {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        background-color: #D89E9E;
+        opacity: 1;
+    }
+}
+
+@keyframes nav-load {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes nav-title {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes nav-menu {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes kol-reg-load {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gambar-load {
+    0% {
+        transform: translate(200px, -200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes efek-input {
+    100% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    }
 }
 
 @media (max-width:1200px) {
