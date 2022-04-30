@@ -56,6 +56,7 @@ function masuk($data){
     $hasil = mysqli_query($conn, "SELECT * FROM akun WHERE
         email = '$email'");
     $baris_data = mysqli_fetch_assoc($hasil);
+    
     if($baris_data["keterangan"] == "Admin"){
         // cek email "Admin"
         if( mysqli_num_rows($hasil) == 1 ){

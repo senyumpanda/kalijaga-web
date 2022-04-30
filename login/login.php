@@ -1,16 +1,16 @@
 <?php 
+
 require("../connectDB/db.php");
-session_start();
 
-$pass = true;
+if(isset($_POST["masuk"])){
 
-if(isset($_POST["login"])){
-
+    // admin
     if(masuk($_POST) == 1){
         header("Location: ../beranda/beranda.php?a=1");
         exit;
     }
 
+    // customer
     else if(masuk($_POST) == 2){
         header("Location: ../beranda/beranda.php?c=1");
         exit;
@@ -40,7 +40,7 @@ if(isset($_POST["login"])){
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bb-shadow" style="background-color: #CD7575;">
         <div class="container-fluid">
-            <a href="../beranda/beranda.php" class="navbar-brand" style="font-size: 32px; ">Kalijaga</a>
+            <a href="../beranda/beranda.php" class="navbar-brand" style="font-size: 32px;cursor:pointer;">Kalijaga</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -58,6 +58,27 @@ if(isset($_POST["login"])){
                     <li class="nav-item mx-1">
                         <a class="nav-link" href="../kontak_kami/kontak.php">Kontak Kami</a>
                     </li>
+                    <?php if($_SESSION["admin"]) : ?>
+                    <li class="nav-item">
+                        <a class="text-white" href="../admin/admin.php">
+                            <div class="kotak-foto me-2 text-center"
+                                style="width: 30px; height:30px;margin-bottom: 1.8rem;">
+                                <i class="bi bi-person-fill fs-1"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <?php endif;  ?>
+
+                    <?php if($_SESSION["customer"]) : ?>
+                    <li class="nav-item">
+                        <a class="text-white" href="../customer/customer.php">
+                            <div class="kotak-foto me-2 text-center"
+                                style="width: 30px; height:30px;margin-bottom: 1.8rem;">
+                                <i class="bi bi-person-fill fs-1"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -100,7 +121,7 @@ if(isset($_POST["login"])){
 
                         <!-- Tombol Masuk -->
                         <div class="tombol mt-53">
-                            <button type="submit" name="login" class="tblMasuk">
+                            <button type="submit" name="masuk" class="tblMasuk">
                                 <span>Masuk</span>
                             </button>
                         </div>

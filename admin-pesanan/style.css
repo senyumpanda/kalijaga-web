@@ -136,6 +136,10 @@ body {
     text-decoration: underline;
 }
 
+.barang {
+    border-bottom: 3px solid #DAA7A7;
+}
+
 .bor {
     border: solid red;
 }

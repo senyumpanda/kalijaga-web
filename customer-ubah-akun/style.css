@@ -156,6 +156,8 @@ body {
 }
 
 .tbl .btn-custom {
+    font-size: 1.1rem;
+    font-weight: bold;
     width: 100%;
     border-radius: 25px;
 }

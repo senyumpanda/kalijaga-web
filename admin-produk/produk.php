@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>admin</title>
+    <title>admin - produk</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,7 +18,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bb-shadow" style="background-color: #CD7575;">
         <div class="container-fluid">
-            <a class="navbar-brand" style="font-size: 32px; cursor: default;">Kalijaga</a>
+            <a href="../beranda/beranda.php" class="navbar-brand" style="font-size: 32px; cursor: pointer;">Kalijaga</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -28,8 +28,11 @@
                 style="font-size: 16px; padding-right: 5rem;">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item text-center mx-1">
-                        <a class="nav-link d-flex align-content-center justify-content-center active" href="../admin/admin.html">
-                            <i class="bi bi-person-circle me-2"></i>
+                        <a class="nav-link d-flex align-content-center justify-content-center active"
+                            href="../admin/admin.php">
+                            <div class="kotak-foto me-2" style="width: 35px; height:35px;">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
                             Admin
                         </a>
                     </li>
@@ -43,39 +46,38 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Menu Kiri -->
-            <div class="menu-kiri col-2">
-                <!-- Menu Kiri-->
-                <div class="judul mt-5 text-center">
-                    <h3>Admin</h3>
-                </div>
-                <!-- Akhir Menu Kiri -->
+            <div class="menu-kiri col-2 ">
 
                 <!-- Pilihan Menu -->
-                <div class="pilihan-menu mt-3">
-                    <ul class="">
-                        <li class="awal ">
-                            <i class="bi bi-house-door"></i>
-                            Beranda
-                        </li>
-                        <li class="awal ">
-                            <i class="bi bi-basket-fill"></i>
-                            Penjualan
-                            <ul>
-                                <li class="kedua">
-                                    <i class="bi bi-caret-right-fill"></i>
-                                    <a href="produk.html" class="aktif">Produk</a>
+                <div class="row mt-4">
+                    <div class="col-11">
+                        <div class="pilihan-menu">
+                            <ul class="">
+                                <li class="awal">
+                                    <i class="bi bi-house-door"></i>
+                                    Beranda
                                 </li>
-                                <li class="kedua">
-                                    <i class="bi bi-caret-right-fill"></i>
-                                    <a href="../admin-penjualan/admin-penjualan.html">Data Penjualan</a>
-                                </li>
-                                <li class="kedua">
-                                    <i class="bi bi-caret-right-fill"></i>
-                                    <a href="#">Pesanan</a>
+                                <li class="awal">
+                                    <i class="bi bi-basket-fill"></i>
+                                    Penjualan
+                                    <ul>
+                                        <li class="kedua g-0">
+                                            <i class="bi bi-caret-right-fill"></i>
+                                            <a href="produk.php" class="aktif">Produk</a>
+                                        </li>
+                                        <li class="kedua g-0">
+                                            <i class="bi bi-caret-right-fill"></i>
+                                            <a href="../admin-penjualan/admin-penjualan.php">Data Penjualan</a>
+                                        </li>
+                                        <li class="kedua g-0">
+                                            <i class="bi bi-caret-right-fill"></i>
+                                            <a href="../admin-pesanan/admin-pesanan-1.php">Pesanan</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
                 <!-- Akhir Pilihan Menu -->
             </div>
@@ -89,7 +91,7 @@
                             <h3>Daftar Produk</h3>
                             <div class="tmb-produk fw-bold">
                                 <i class="bi bi-plus-lg"></i>
-                                <a href="../admin-tambah-produk/tambah-produk.html">Tambah Produk</a>
+                                <a href="../admin-tambah-produk/tambah-produk.php">Tambah Produk</a>
                             </div>
                         </div>
                         <div class="bar-produk mt-5">
@@ -107,7 +109,7 @@
                                     <!-- Produk -->
                                     <tr>
                                         <td class="pt-5 fs-5 text-white" style="width:25px; cursor: pointer;">
-                                            <a href="../admin-edit-produk/edit-produk.html" class="text-white">
+                                            <a href="../admin-ubah-produk/ubah-produk.php" class="text-white">
                                                 <i class="bi bi-pencil-square" style="cursor: pointer;"></i>
                                             </a>
                                         </td>
@@ -132,7 +134,7 @@
                                     <!-- Produk -->
                                     <tr>
                                         <td class="pt-5 fs-5 text-white" style="width:25px; cursor: pointer;">
-                                            <a href="../admin-edit-produk/edit-produk.html" class="text-white">
+                                            <a href="../admin-ubah-produk/ubah-produk.php" class="text-white">
                                                 <i class="bi bi-pencil-square" style="cursor: pointer;"></i>
                                             </a>
                                         </td>
@@ -157,7 +159,7 @@
                                     <!-- Produk -->
                                     <tr>
                                         <td class="pt-5 fs-5 text-white" style="width:25px; cursor: pointer;">
-                                            <a href="../admin-edit-produk/edit-produk.html" class="text-white">
+                                            <a href="../admin-ubah-produk/ubah-produk.php" class="text-white">
                                                 <i class="bi bi-pencil-square" style="cursor: pointer;"></i>
                                             </a>
                                         </td>

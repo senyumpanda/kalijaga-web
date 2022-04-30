@@ -1,4 +1,5 @@
 <?php 
+
 session_start();
 $_SESSION["admin"] = false;
 $_SESSION["customer"] = false;
@@ -51,17 +52,23 @@ if (isset($_GET["a"])) {
                         <a class="nav-link pe-3" href="../kontak_kami/kontak.php">Kontak Kami</a>
                     </li>
                     <?php if($_SESSION["admin"]) : ?>
-                    <li class="nav-item mx-1">
+                    <li class="nav-item">
                         <a class="text-white" href="../admin/admin.php">
-                            <i class="bi bi-person-circle fs-1" style="text-shadow: 0 0 15px #D89E9E;"></i>
+                            <div class="kotak-foto me-2 text-center"
+                                style="width: 30px; height:30px;margin-bottom: 1.8rem;">
+                                <i class="bi bi-person-fill fs-1"></i>
+                            </div>
                         </a>
                     </li>
                     <?php endif;  ?>
 
                     <?php if($_SESSION["customer"]) : ?>
-                    <li class="nav-item mx-1">
+                    <li class="nav-item">
                         <a class="text-white" href="../customer/customer.php">
-                            <i class="bi bi-person-circle fs-1" style="text-shadow: 0 0 15px #D89E9E;"></i>
+                            <div class="kotak-foto me-2 text-center"
+                                style="width: 30px; height:30px;margin-bottom: 1.8rem;">
+                                <i class="bi bi-person-fill fs-1"></i>
+                            </div>
                         </a>
                     </li>
                     <?php endif; ?>

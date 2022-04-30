@@ -18,7 +18,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bb-shadow" style="background-color: #CD7575;">
         <div class="container-fluid">
-            <a href="../beranda/beranda.php" class="navbar-brand" style="font-size: 32px; cursor: default;">Kalijaga</a>
+            <a href="../beranda/beranda.php" class="navbar-brand" style="font-size: 32px; cursor: pointer;">Kalijaga</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -28,8 +28,8 @@
                 style="font-size: 16px; padding-right: 5rem;">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item text-center mx-1">
-                        <a class="nav-link d-flex align-content-center justify-content-center pe-2 active"
-                            href="customer.html">
+                        <a class="nav-link d-flex align-content-center justify-content-center active"
+                            href="../admin/admin.php">
                             <div class="kotak-foto me-2" style="width: 35px; height:35px;">
                                 <i class="bi bi-person-fill"></i>
                             </div>
@@ -51,7 +51,7 @@
                 <!-- Pilihan Menu -->
                 <div class="row mt-4">
                     <div class="col-11">
-                        <div class="pilihan-menu">
+                        <div class="pilihan-menu mt-3">
                             <ul class="">
                                 <li class="awal">
                                     <i class="bi bi-house-door"></i>
@@ -63,11 +63,11 @@
                                     <ul>
                                         <li class="kedua g-0">
                                             <i class="bi bi-caret-right-fill"></i>
-                                            <a href="../customer-keranjang/keranjang.html">Keranjang</a>
+                                            <a href="../customer-keranjang/keranjang.php">Keranjang</a>
                                         </li>
                                         <li class="kedua g-0">
                                             <i class="bi bi-caret-right-fill"></i>
-                                            <a href="../customer-pesananku/pesananku-1.html">Pesananku</a>
+                                            <a href="../customer-pesananku/pesananku-1.php">Pesananku</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -80,41 +80,60 @@
             <!-- Akhir Menu Kiri -->
 
             <!-- Info Kanan -->
-            <div class="menu-kanan pt-5 col-10">
-                <div class="info-akun mt-5">
-                    <div class="row mt-5 mb-5" style="height:20vh;">
-                        <div class="col-6 mt-3 offset-3 text-center">
-                            <div class="kotak-foto-akun w-25 mx-auto"
-                                style="width: 10vw; height: 20vh;border-radius: 50%;">
-                                <i class="bi bi-person-fill text-white" style="width: 100%; font-size: 10rem;"></i>
+            <div class="menu-kanan mt-5 ps-5 col-10">
+                <div class="bag-atas">
+                    <div class="ket-akun">
+                        <div class="row">
+                            <div
+                                class="gan-foto col-2 d-flex justify-content-center align-content-center flex-column text-white">
+                                <div class="mx-auto" style="width: 100px; height:100px;">
+                                    <i class="bi bi-person-fill d-flex justify-content-center align-content-center flex-column ps-2 pt-2"
+                                        style="font-size: 5rem;"></i>
+                                </div>
+                                <p class="text-center">
+                                    <a href="">Ganti Foto</a>
+                                </p>
+                            </div>
+                            <div class="teks-nama col-10 d-flex align-items-center">
+                                <h2>
+                                    Customer
+                                </h2>
                             </div>
                         </div>
                     </div>
-                    <div class="row g-0 mt-4">
-                        <div class="col-8 ps-4 offset-2">
-                            <div class="info ps-4 mt-5 w-50 mx-auto">
-                                <div class="info-label">
-                                    <span>Nama</span>
-                                    <p>Customer 1</p>
-                                </div>
-                                <div class="info-label">
-                                    <span>Nomor Whatsapp</span>
-                                    <p>1231-3453-4564</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </h2>
                 </div>
-                <div class="tbl ms-auto w-75 bor">
-                    <button type="submit">
-                        <a href="../customer-ubah-akun/ubah-akun.php">Ubah Akun</a>
-                    </button>
-                    <button type="submit">
-                        <a href="../customer-keluar-akun/keluar-akun.php">
-                            <i class="bi bi-box-arrow-right"></i>
-                            Keluar
-                        </a>
-                    </button>
+
+                <div class="bag-bawah">
+                    <form action="" method="POST">
+                        <div class="bag-form">
+                            <div class="form-floating w-75 mb-3">
+                                <input type="text" class="form-control" id="namaDepan" placeholder="Nama Depan"
+                                    autocomplete="off" style="box-shadow:none; border-bottom: 3px solid black;">
+                                <label for="namaDepan">Nama Depan</label>
+                            </div>
+                            <div class="form-floating w-75 mb-3">
+                                <input type="text" class="form-control" id="namaBelakang" placeholder="Nama Belakang"
+                                    autocomplete="off" style="box-shadow:none; border-bottom: 3px solid black;">
+                                <label for="namaBelakang">Nama Belakang</label>
+                            </div>
+                            <div class="form-floating w-75 mb-3">
+                                <input type="email" class="form-control" id="email" placeholder="Email"
+                                    autocomplete="off" style="box-shadow:none; border-bottom: 3px solid black;">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="form-floating w-75 mb-4">
+                                <input type="password" class="form-control" id="password" placeholder="Password"
+                                    autocomplete="off" style="box-shadow:none; border-bottom: 3px solid black;">
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <div class="tbl">
+                            <button name="ubahAkunCustomer" class="btn btn-custom">
+                                Ubah
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <!-- Info Kanan -->

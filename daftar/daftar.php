@@ -1,8 +1,6 @@
 <?php 
-require("../connectDB/db.php");
-session_start();
 
-$pass = true;
+require("../connectDB/db.php");
 
 if(isset($_POST["daftar"])){
 
@@ -35,7 +33,7 @@ if(isset($_POST["daftar"])){
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bb-shadow" style="background-color: #CD7575;">
         <div class="container-fluid">
-            <a href="../beranda/beranda.php" class="navbar-brand" style="font-size: 32px;">Kalijaga</a>
+            <a href="../beranda/beranda.php" class="navbar-brand" style="font-size: 32px;cursor:pointer;">Kalijaga</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -45,13 +43,13 @@ if(isset($_POST["daftar"])){
                 style="font-size: 16px; padding-right: 5rem;">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="../tentang_kami/tentang.html">Tentang Kami</a>
+                        <a class="nav-link" href="../tentang_kami/tentang.php">Tentang Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="../produk_kami/produk.html">Produk Kami</a>
+                        <a class="nav-link" href="../produk_kami/produk.php">Produk Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="../kontak_kami/kontak.html">Kontak Kami</a>
+                        <a class="nav-link" href="../kontak_kami/kontak.php">Kontak Kami</a>
                     </li>
                 </ul>
             </div>
@@ -115,7 +113,7 @@ if(isset($_POST["daftar"])){
                     <!-- Alternative Login -->
                     <div id="emailHelp border-bottom-2" class="form-text text-center">
                         Sudah memiliki akun?
-                        <a class="text-black" href="../login/login.html">Masuk</a>
+                        <a class="text-black" href="../login/login.php">Masuk</a>
                     </div>
                     <!-- Akhir Alternative Login -->
                 </div>

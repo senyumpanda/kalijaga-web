@@ -73,6 +73,10 @@ body {
     color: white;
 }
 
+.menu-kiri .judul h3 {
+    font-weight: bold;
+}
+
 .menu-kiri .awal {
     font-size: 1.3rem;
     list-style: none;
@@ -95,51 +99,44 @@ body {
     transition: 0.5s ease;
 }
 
+.menu-kiri .kedua .aktif {
+    text-decoration: underline;
+}
+
 .menu-kiri .kedua a:hover {
     text-decoration: underline;
 }
 
-.info-akun .bi-person-circle {
-    color: white;
+.bungkus-1 {
+    background-color: rgb(169, 94, 94, 0.56);
+    height: 10vh;
 }
 
-.info span {
-    font-weight: bold;
-    font-size: 22px;
-    color: #A95E5E;
+.bungkus-2 {
+    background-color: rgb(169, 94, 94, 0.56);
+    height: 70vh;
 }
 
-.info p {
-    font-size: 30px;
-    font-weight: bold;
-    color: #754646;
+.list-judul li {
+    list-style: none;
 }
 
-.tbl button {
-    width: 11rem;
-    border-radius: 25px;
-    height: 2.5rem;
-    border: none;
-    margin-left: 14.5%;
-    background-color: #A95E5E;
-    transition: 0.5s ease-out;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
-    font-size: 1.1rem;
-    font-weight: bold;
-}
-
-.tbl button:last-child {
-    margin-left: 2%;
-}
-
-.tbl button:hover {
-    background-color: #8e5454;
-}
-
-.tbl a {
-    font-weight: 500;
+.list-judul li a {
+    font-size: 1.2rem;
     color: white;
     text-decoration: none;
+}
+
+.list-judul li a:hover {
+    text-decoration: underline;
+}
+
+.list-judul li a.aktif {
+    text-decoration: underline;
+}
+
+.barang {
+    border-bottom: 3px solid #DAA7A7;
 }
 
 .bor {

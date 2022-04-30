@@ -18,7 +18,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bb-shadow" style="background-color: #CD7575;">
         <div class="container-fluid">
-            <a class="navbar-brand" style="font-size: 32px; cursor: default;">Kalijaga</a>
+            <a href="../beranda/beranda.php" class="navbar-brand" style="font-size: 32px; cursor: pointer;">Kalijaga</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -28,17 +28,35 @@
                 style="font-size: 16px; padding-right: 5rem;">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="../beranda/beranda.html">Beranda</a>
+                        <a class="nav-link" href="../tentang_kami/tentang.php">Tentang Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link" href="../tentang_kami/tentang.html">Tentang Kami</a>
+                        <a class="nav-link active" href="produk.php">Produk Kami</a>
                     </li>
                     <li class="nav-item mx-1">
-                        <a class="nav-link active" href="produk.html">Produk Kami</a>
+                        <a class="nav-link" href="../kontak_kami/kontak.php">Kontak Kami</a>
                     </li>
-                    <li class="nav-item mx-1">
-                        <a class="nav-link" href="../kontak_kami/kontak.html">Kontak Kami</a>
+                    <?php if($_SESSION["admin"]) : ?>
+                    <li class="nav-item">
+                        <a class="text-white" href="../admin/admin.php">
+                            <div class="kotak-foto me-2 text-center"
+                                style="width: 30px; height:30px;margin-bottom: 1.8rem;">
+                                <i class="bi bi-person-fill fs-1"></i>
+                            </div>
+                        </a>
                     </li>
+                    <?php endif;  ?>
+
+                    <?php if($_SESSION["customer"]) : ?>
+                    <li class="nav-item">
+                        <a class="text-white" href="../customer/customer.php">
+                            <div class="kotak-foto me-2 text-center"
+                                style="width: 30px; height:30px;margin-bottom: 1.8rem;">
+                                <i class="bi bi-person-fill fs-1"></i>
+                            </div>
+                        </a>
+                    </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>

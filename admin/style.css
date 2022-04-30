@@ -73,11 +73,6 @@ body {
     color: white;
 }
 
-.menu-kiri .judul h3 {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
 .menu-kiri .awal {
     font-size: 1.3rem;
     list-style: none;
@@ -104,19 +99,6 @@ body {
     text-decoration: underline;
 }
 
-.info-akun {
-    height: 55vh;
-}
-
-.info-akun .bi-person-circle {
-    font-size: 12rem;
-    color: white;
-}
-
-.info {
-    width: 28rem;
-}
-
 .info span {
     font-weight: bold;
     font-size: 22px;
@@ -134,10 +116,16 @@ body {
     border-radius: 25px;
     height: 2.5rem;
     border: none;
-    margin-left: 72%;
+    margin-left: 14.5%;
     background-color: #A95E5E;
     transition: 0.5s ease-out;
     box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.tbl button:last-child {
+    margin-left: 2%;
 }
 
 .tbl button:hover {
