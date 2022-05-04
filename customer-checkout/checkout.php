@@ -1,3 +1,18 @@
+<?php 
+require "../connectDB/db.php";
+session_start();
+
+$_SESSION["belum_bayar"] = false;
+$_SESSION["sudah_bayar"] = false;
+
+if( isset($_GET["sudah"]) ){
+    $_SESSION["sudah_bayar"] = true;
+} else if( isset($_GET["belum"]) ){
+    $_SESSION["belum_bayar"] = true;
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -126,8 +141,8 @@
                                             <label class="ps-5" for="alamatCheckOut">Alamat:</label>
                                         </div>
                                         <div class="col-8 offset-1">
-                                            <input type="email" class="form-control" id="alamatCheckOut"
-                                                style="height: 66px;">
+                                            <input type="text" class="form-control" id="alamatCheckOut"
+                                                style="height: 66px;" autocomplete="off" required>
                                         </div>
                                     </div>
                                 </div>
@@ -239,6 +254,7 @@
                                 </div>
                             </div>
 
+                            <?php if($_SESSION["belum_bayar"]) : ?>
                             <!-- Belum Bayar -->
                             <div class="row pt-5 mt-2">
                                 <div class="col-2 ps-5 ms-auto">
@@ -249,7 +265,9 @@
                                 </div>
                             </div>
                             <!-- Akhir Belum Bayar -->
+                            <?php endif; ?>
 
+                            <?php if($_SESSION["sudah_bayar"]) : ?>
                             <!-- Sudah Bayar -->
                             <div class="row pt-5 mt-2">
                                 <div class="col-2 ps-5 ms-auto">
@@ -260,6 +278,7 @@
                                 </div>
                             </div>
                             <!-- Akhir Sudah Bayar -->
+                            <?php endif; ?>
 
                         </div>
                     </div>

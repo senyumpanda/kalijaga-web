@@ -1,3 +1,20 @@
+<?php 
+
+require "../connectDB/db.php";
+session_start();
+
+$_SESSION["admin"] = false;
+$_SESSION["customer"] = false;
+
+if (isset($_GET["a"])) {
+    $_SESSION["admin"] = true;
+} else if (isset($_GET["c"])) {
+    $_SESSION["customer"] = true;
+}
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -84,7 +101,11 @@
                         <div class="tombol-produk mt-5 w-75 mx-auto d-flex justify-content-between">
                             <button type="submit" name="beli">
                                 <span>
-                                    <a href="">Beli</a>
+                                    <?php if($_SESSION["customer"]) { ?>
+                                        <a href="../customer-checkout/checkout.php">Beli</a>
+                                    <?php } else { ?>
+                                        <a href="../login/login.php">Beli</a>
+                                    <?php } ?>
                                 </span>
                             </button>
                             <div class="rating">
@@ -127,7 +148,11 @@
                         <div class="tombol-produk mt-5 w-75 mx-auto d-flex justify-content-between">
                             <button type="submit" name="beli">
                                 <span>
-                                    <a href="">Beli</a>
+                                    <?php if($_SESSION["customer"]) { ?>
+                                        <a href="../customer-checkout/checkout.php">Beli</a>
+                                    <?php } else { ?>
+                                        <a href="../login/login.php">Beli</a>
+                                    <?php } ?>
                                 </span>
                             </button>
                             <div class="rating">
@@ -164,7 +189,11 @@
                         <div class="tombol-produk mt-5 w-75 mx-auto d-flex justify-content-between">
                             <button type="submit" name="beli">
                                 <span>
-                                    <a href="">Beli</a>
+                                    <?php if($_SESSION["customer"]) { ?>
+                                        <a href="../customer-checkout/checkout.php">Beli</a>
+                                    <?php } else { ?>
+                                        <a href="../login/login.php">Beli</a>
+                                    <?php } ?>
                                 </span>
                             </button>
                             <div class="rating">

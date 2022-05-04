@@ -105,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tbl ms-auto w-75 bor">
+                <div class="tbl ms-auto w-75">
                     <button type="submit">
                         <a href="../customer-ubah-akun/ubah-akun.php">Ubah Akun</a>
                     </button>

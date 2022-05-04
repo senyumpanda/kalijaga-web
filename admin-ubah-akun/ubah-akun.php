@@ -1,3 +1,33 @@
+<?php 
+
+require "../connectDB/db.php";
+
+if(isset($_GET["a"])){
+    $id = $_GET["a"];
+    $hasil = query("SELECT * FROM akun WHERE id_akun = $id");
+}
+
+if(isset($_POST["ubahAkunAdmin"])){
+    $_POST["idAkun"] = $_GET['a'];
+    if(ubahAkunAdmin($_POST) > 0){
+        echo "
+            <script>
+                alert('Data Berhasil Diperbaharui');
+                document.location.href = '../admin/admin.php';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Data Gagal Diperbaharui');
+                document.location.href = '../admin/admin.php';
+            </script>
+        ";
+    }
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -85,6 +115,7 @@
 
             <!-- Info Kanan -->
             <div class="menu-kanan mt-5 ps-5 col-10">
+                <?php foreach($hasil as $x) : ?>
                 <div class="bag-atas">
                     <div class="ket-akun">
                         <div class="row">
@@ -100,7 +131,7 @@
                             </div>
                             <div class="teks-nama col-10 d-flex align-items-center">
                                 <h2>
-                                    Ilham Pandu Prasetyo
+                                    <?= $x["nama_depan"]; ?> - <?= $x["nama_belakang"]; ?>
                                 </h2>
                             </div>
                         </div>
@@ -112,33 +143,39 @@
                     <form action="" method="POST">
                         <div class="bag-form">
                             <div class="form-floating w-75 mb-3">
-                                <input type="text" class="form-control" id="namaDepan" placeholder="Nama Depan"
-                                    autocomplete="off" style="box-shadow:none; border-bottom: 3px solid black;">
-                                <label for="namaDepan">Nama Depan</label>
+                                <input type="text" class="form-control" name="namaDepan" id="namaDepan" placeholder="Nama Depan"
+                                    autocomplete="off" value="<?= $x['nama_depan']; ?>" style="box-shadow:none; border-bottom: 3px solid black;">
+                                <label for="namaDepan" style="text-shadow:0 3px 5px black;" >Nama Depan</label>
                             </div>
                             <div class="form-floating w-75 mb-3">
-                                <input type="text" class="form-control" id="namaBelakang" placeholder="Nama Belakang"
-                                    autocomplete="off" style="box-shadow:none; border-bottom: 3px solid black;">
-                                <label for="namaBelakang">Nama Belakang</label>
+                                <input type="text" class="form-control" name="namaBelakang" id="namaBelakang" placeholder="Nama Belakang"
+                                    autocomplete="off" value="<?= $x['nama_belakang']; ?>" style="box-shadow:none; border-bottom: 3px solid black;">
+                                <label for="namaBelakang" style="text-shadow:0 3px 5px black;" >Nama Belakang</label>
                             </div>
                             <div class="form-floating w-75 mb-3">
-                                <input type="email" class="form-control" id="email" placeholder="Email"
-                                    autocomplete="off" style="box-shadow:none; border-bottom: 3px solid black;">
-                                <label for="email">Email</label>
+                                <input type="text" class="form-control" name="noTelepon" id="noTelepon" placeholder="Nomor Telepon"
+                                    autocomplete="off" value="<?= $x['no_telepon']; ?>" style="box-shadow:none; border-bottom: 3px solid black;">
+                                <label for="noTelepon" style="text-shadow:0 3px 5px black;" >No. Telepon</label>
+                            </div>
+                            <div class="form-floating w-75 mb-3">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email"
+                                    autocomplete="off" value="<?= $x['email']; ?>" style="box-shadow:none; border-bottom: 3px solid black;">
+                                <label for="email" style="text-shadow:0 3px 5px black;" >Email</label>
                             </div>
                             <div class="form-floating w-75 mb-4">
-                                <input type="password" class="form-control" id="password" placeholder="Password"
-                                    autocomplete="off" style="box-shadow:none; border-bottom: 3px solid black;">
-                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password"
+                                    autocomplete="off" value="<?= $x['password']; ?>" style="box-shadow:none; border-bottom: 3px solid black;">
+                                <label for="password" style="text-shadow:0 3px 5px black;" >Password</label>
                             </div>
                         </div>
                         <div class="tbl">
-                            <button class="btn btn-custom">
+                            <button class="btn btn-custom" name="ubahAkunAdmin">
                                 Ubah
                             </button>
                         </div>
                     </form>
                 </div>
+                <?php endforeach; ?>
             </div>
             <!-- Info Kanan -->
         </div>

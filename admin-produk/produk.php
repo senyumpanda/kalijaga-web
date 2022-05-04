@@ -1,3 +1,16 @@
+<?php 
+
+require "../connectDB/db.php";
+
+$hasil = ambilDataProduk("SELECT * FROM produk");
+
+// var_dump($hasil);
+
+// die;
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -107,80 +120,32 @@
                                 </thead>
                                 <tbody class="border-top-0">
                                     <!-- Produk -->
+                                    <?php foreach($hasil as $x) : ?>
                                     <tr>
                                         <td class="pt-5 fs-5 text-white" style="width:25px; cursor: pointer;">
-                                            <a href="../admin-ubah-produk/ubah-produk.php" class="text-white">
+                                            <a href="../admin-ubah-produk/ubah-produk.php?i=<?= $x["id_produk"]; ?>" class="text-white">
                                                 <i class="bi bi-pencil-square" style="cursor: pointer;"></i>
                                             </a>
                                         </td>
                                         <td class="" style="width: 25px;">
-                                            <img src="../img/teh.png" alt="" style="width: 120px; height: 100px;">
+                                            <img src="../img/<?= $x["gambar"]; ?>"  alt="" style="width: 100px; height: 100px;background-color:transparent;">
                                         </td>
                                         <td class="pt-5 text-white">
-                                            Teh Mawar
+                                            <?= $x["nama_produk"]; ?>
                                         </td>
                                         <td class="pt-5 text-white">
                                             <p class="border border-2 w-50 px-3 text-center rounded-2 p-2">
-                                                8.000
+                                                Rp<?= $x["harga_produk"]; ?>
                                             </p>
                                         </td>
                                         <td class="pt-5 text-white">
                                             <p class="border border-2 w-50 px-3 text-center rounded-2 p-2">
-                                                15
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <!-- Akhir Produk -->
-                                    <!-- Produk -->
-                                    <tr>
-                                        <td class="pt-5 fs-5 text-white" style="width:25px; cursor: pointer;">
-                                            <a href="../admin-ubah-produk/ubah-produk.php" class="text-white">
-                                                <i class="bi bi-pencil-square" style="cursor: pointer;"></i>
-                                            </a>
-                                        </td>
-                                        <td class="" style="width: 25px;">
-                                            <img src="../img/teh2.png" alt="" style="width: 120px; height: 100px;">
-                                        </td>
-                                        <td class="pt-5 text-white">
-                                            Teh Mawar Ver. 2
-                                        </td>
-                                        <td class="pt-5 text-white">
-                                            <p class="border border-2 w-50 px-3 text-center rounded-2 p-2">
-                                                8.000
-                                            </p>
-                                        </td>
-                                        <td class="pt-5 text-white">
-                                            <p class="border border-2 w-50 px-3 text-center rounded-2 p-2">
-                                                15
+                                                <?= $x["stok_produk"]; ?>
                                             </p>
                                         </td>
                                     </tr>
                                     <!-- Akhir Produk -->
-                                    <!-- Produk -->
-                                    <tr>
-                                        <td class="pt-5 fs-5 text-white" style="width:25px; cursor: pointer;">
-                                            <a href="../admin-ubah-produk/ubah-produk.php" class="text-white">
-                                                <i class="bi bi-pencil-square" style="cursor: pointer;"></i>
-                                            </a>
-                                        </td>
-                                        <td class="" style="width: 25px;">
-                                            <img src="../img/parfum.png" alt="" style="width: 120px; height: 100px;">
-                                        </td>
-                                        <td class="pt-5 text-white">
-                                            Parfum Mawar
-                                        </td>
-                                        <td class="pt-5 text-white">
-                                            <p class="border border-2 w-50 px-3 text-center rounded-2 p-2">
-                                                8.000
-                                            </p>
-                                        </td>
-                                        <td class="pt-5 text-white">
-                                            <p class="border border-2 w-50 px-3 text-center rounded-2 p-2">
-                                                15
-                                            </p>
-                                        </td>
-                                    </tr>
-                                    <!-- Akhir Produk -->
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

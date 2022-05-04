@@ -1,5 +1,9 @@
 <?php 
 
+require "../connectDB/db.php";
+
+$hasil = query("SELECT * FROM AKUN WHERE keterangan = 'Admin'");
+
 ?>
 
 <!doctype html>
@@ -88,6 +92,7 @@
 
             <!-- Info Kanan -->
             <div class="menu-kanan pt-5 col-10">
+                <?php foreach($hasil as $x) : ?>
                 <div class="info-akun mt-5">
                     <div class="row mt-5 mb-5" style="height:20vh;">
                         <div class="col-6 mt-3 offset-3 text-center">
@@ -98,23 +103,29 @@
                         </div>
                     </div>
                     <div class="row g-0 mt-4">
+                        
                         <div class="col-8 ps-4 offset-2">
                             <div class="info ps-4 mt-5 w-50 mx-auto">
                                 <div class="info-label">
                                     <span>Nama</span>
-                                    <p>Customer 1</p>
+                                    <p>
+                                        <?= $x["nama_depan"]; ?> - <?= $x["nama_belakang"]; ?>
+                                    </p>
                                 </div>
                                 <div class="info-label">
                                     <span>Nomor Whatsapp</span>
-                                    <p>9082-1231-4523</p>
+                                    <p>
+                                        <?= $x["no_telepon"]; ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
-                <div class="tbl ms-auto w-75 bor">
+                <div class="tbl ms-auto w-75">
                     <button type="submit">
-                        <a href="../admin-ubah-akun/ubah-akun.php">Ubah Akun</a>
+                        <a href="../admin-ubah-akun/ubah-akun.php?a=<?= $x["id_akun"]; ?>">Ubah Akun</a>
                     </button>
                     <button type="submit">
                         <a href="../admin-keluar-akun/keluar-akun.php">
@@ -123,6 +134,7 @@
                         </a>
                     </button>
                 </div>
+                <?php endforeach; ?>
             </div>
             <!-- Info Kanan -->
         </div>

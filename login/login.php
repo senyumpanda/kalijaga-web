@@ -1,6 +1,6 @@
 <?php 
-
 require("../connectDB/db.php");
+session_start();
 
 if(isset($_POST["masuk"])){
 
