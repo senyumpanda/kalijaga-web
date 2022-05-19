@@ -1,0 +1,6 @@
+** BELUM **
+1. Akses ke Informasi Akun (Masih ada Bug)
+2. Opsi Produk belum ada (beserta pengaturan database)
+3. Data Penjualan
+4. Data Pesanan
+5. CheckOut
