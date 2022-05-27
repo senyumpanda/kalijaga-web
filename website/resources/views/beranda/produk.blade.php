@@ -23,7 +23,7 @@
                         <button type="submit" name="beli">
                             <span>
                                 @if($akun === "Customer")
-                                <a href="/tambah{{ $produk->id }}keranjang">Beli</a>
+                                <a href="/tambah{{ $produk->id }}keranjang{{ $user }}">Beli</a>
                                 @else
                                 <a href="/login">Beli</a>
                                 @endif

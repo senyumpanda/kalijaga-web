@@ -17,11 +17,6 @@
                                 <div class="container pt-3">
                                     <ul class="d-flex justify-content-between align-content-center list-judul">
                                         <li>
-                                            <a href="../customer-checkout/checkout.php" class="fs-2">
-                                                <i class="bi bi-arrow-left"></i>
-                                            </a>
-                                        </li>
-                                        <li>
                                             <a class="fw-bold ps-3 pe-5 me-5 fs-2">
                                                 Pembayaran
                                             </a>
@@ -38,12 +33,14 @@
                                             <p class="float-start">Total Pembayaran</p>
                                         </div>
                                         <div class="col-6 ">
-                                            <p class="float-end">Rp24000</p>
+                                            <p class="float-end">
+                                                Rp{{ ($produk->harga_produk * $barang->jumlah_pesanan) + $barang->jasa_pengiriman }}
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="row text-white pt-3">
                                         <div class="col-12">
-                                            <h6 class="">Bank BCA(Virtual Account)</h6>
+                                            <h6 class="">Bank {{ $barang->pembayaran }}(Virtual Account)</h6>
                                         </div>
                                     </div>
                                     <div class="row text-white">
@@ -64,7 +61,8 @@
                                         </div>
                                     </div>
                                     <div class="row pt-4" style="height: 2.5rem;">
-                                        <a href="" class="btn btn-custom w-25 mx-auto text-white fw-bold pt-2">Ok</a>
+                                        <a href="/c=true{{ $barang->user_id }}"
+                                            class="btn btn-custom w-25 mx-auto text-white fw-bold pt-2">Ok</a>
                                     </div>
                                 </div>
                             </div>

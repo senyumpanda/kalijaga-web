@@ -84,9 +84,11 @@ Route::get('/nota-{id}', [CustomerController::class, 'nota_pembelian'])->name('n
 Route::get('/tambah{id_produk}keranjang{id_user}', [CustomerController::class, 'tambah_keranjang'])->name('tambah_keranjang')->middleware('auth');
 
 // Customer - Pembayaran
-Route::get('/bayar_produk#{id}0?', [CustomerController::class, 'pembayaran'])->name('bayarproduk')->middleware('auth');
+Route::get('/detail_bayar{id}', [CustomerController::class, 'pembayaran'])->name('detailbayar')->middleware('auth');
+Route::post('/proses_bayar-{id}', [CustomerController::class, 'proses_pembayaran'])->name('prosesbayar')->middleware('auth');
 
 // Customer - Keranjang -> (Delete)
 Route::get('/del-{id}-keranjang', [KeranjangController::class, 'destroy'])->name('del-keranjang')->middleware('auth');
 // Customer - Keranjang -> (CheckOut)
 Route::get('/ck-{id}-keranjang', [KeranjangController::class, 'index'])->name('cek-keranjang')->middleware('auth');
+Route::post('/ck-{id}-keranjang-simpan', [KeranjangController::class, 'update'])->name('cek-keranjang')->middleware('auth');

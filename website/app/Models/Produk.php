@@ -16,11 +16,6 @@ class Produk extends Model
 
     protected $guarded = ['id'];
 
-    public function ubah(Request $req)
-    {
-
-    }
-
     public function riwayatPenjualan()
     {
         return $this->hasMany(RiwayatPenjualan::class);

@@ -20,6 +20,10 @@ return new class extends Migration
             // $table->unsignedBigInteger('akses_pengiriman_id');
             $table->integer('jumlah_pesanan');
             $table->string('status')->nullable();
+            $table->string('alamat');
+            $table->string('no_resi')->nullable();
+            $table->string('jasa_pengiriman');
+            $table->string('pembayaran');
             $table->date('pesanan_dibuat');
             $table->date('pesanan_selesai')->nullable();
             $table->timestamps();

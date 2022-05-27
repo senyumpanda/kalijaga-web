@@ -26,6 +26,7 @@ class KeranjangController extends Controller
             'nama' => 'Customer',
             'jasa_pengirimans' => JasaPengiriman::all(),
             'pembayarans' => Pembayaran::all(),
+            'akses_keranjang' => Keranjang::all()->firstWhere('id', $id),
             'produk_pesanan' => Produk::all()->firstWhere('id', $data_keranjang->produk_id),
             'user_pesanan' => User::all()->firstWhere('id', $data_keranjang->user_id),
             'jumlah_pesanan' => $data_keranjang->jumlah_pesanan
@@ -82,9 +83,19 @@ class KeranjangController extends Controller
      * @param  \App\Models\Keranjang  $keranjang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Keranjang $keranjang)
+    public function update(Request $request, $id)
     {
-        //
+        $data_keranjang = Keranjang::all()->firstWhere('id', $id);
+        $tambah_data = [
+            'user_id' => $data_keranjang->user_id,
+            'produk_id' => $data_keranjang->produk_id,
+            'jumlah_pesanan' => $request->jmlPesanan,
+            'status' => ''
+        ];
+        DB::update('UPDATE keranjangs
+                    SET user_id = ?, produk_id = ?, jumlah_pesanan = ?
+                    WHERE id = ?', [$data_keranjang->user_id, $data_keranjang->produk_id, $request->jmlPesanan, $id]);
+        return redirect('/ck-'.$id.'-keranjang');
     }
 
     /**
