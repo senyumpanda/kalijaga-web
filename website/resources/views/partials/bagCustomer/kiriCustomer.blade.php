@@ -17,7 +17,7 @@
                             <li class="kedua g-0">
                                 <i class="bi bi-caret-right-fill"></i>
                                 <a href="c-pesananku1"
-                                    class="{{ $akses == 'pesananku1' ||  $akses == 'pesananku2' ? 'aktif' : '' }}">Pesananku</a>
+                                    class="{{ $akses == 'pesananku1' ||  $akses == 'pesananku2' || $akses == 'pesananku3' ? 'aktif' : '' }}">Pesananku</a>
                             </li>
                         </ul>
                     </li>

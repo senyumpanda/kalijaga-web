@@ -372,20 +372,28 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         /* RIWAYAT PENJUALAN */
-        // RiwayatPenjualan::create([
-        //     'user_id' => 1,
-        //     'produk_id' => 1,
-        //     'jumlah_pesanan' => 2,
-        //     'status' => 'Selesai',
-        //     'pesanan_dibuat' => '2021/03/16',
-        //     'pesanan_selesai' => '2021/03/16'
-        // ]);
+        RiwayatPenjualan::create([
+            'user_id' => 2,
+            'produk_id' => 1,
+            'jumlah_pesanan' => 2,
+            'status' => 'Selesai',
+            'alamat' => 'Jalan apa ya, hmm Jalan jalan aja gan',
+            'no_transaksi' => 'LMQ0TU3GE50E2LV4',
+            'no_resi' => '1Y74R7JPRZLE',
+            'jasa_pengiriman' => '8000',
+            'pembayaran' => 'BRI',
+            'pesanan_dibuat' => '2021/03/16',
+            'pesanan_selesai' => '2021/03/16'
+        ]);
         
         // RiwayatPenjualan::create([
         //     'user_id' => 1,
         //     'produk_id' => 2,
         //     'jumlah_pesanan' => 3,
         //     'status' => 'Selesai',
+        //     'alamat' => 'Jalan jalan ke alun-alun',
+        //     'no_transaksi' => '',
+        //     'no_resi' => '',
         //     'pesanan_dibuat' => '2021/03/23',
         //     'pesanan_selesai' => '2021/03/24'
         // ]);
@@ -399,14 +407,19 @@ class DatabaseSeeder extends Seeder
         //     'pesanan_selesai' => '2021/04/3'
         // ]);
         
-        // RiwayatPenjualan::create([
-        //     'user_id' => 2,
-        //     'produk_id' => 1,
-        //     'jumlah_pesanan' => 1,
-        //     'status' => 'Sedang Dikirim',
-        //     'pesanan_dibuat' => '2021/05/10'
-        //     // 'pesanan_selesai' => ''
-        // ]);
+        RiwayatPenjualan::create([
+            'user_id' => 2,
+            'produk_id' => 1,
+            'jumlah_pesanan' => 1,
+            'status' => 'Dikirim',
+            'alamat' => 'Jalan Apa Aja Es',
+            'no_transaksi' => 'ZF880F8GK51X9R0C',
+            'no_resi' => '5O8R9BI9UUJN',
+            'jasa_pengiriman' => '9000',
+            'pembayaran' => 'Mandiri',
+            'pesanan_dibuat' => '2021/05/10',
+            'pesanan_selesai' => '2021/05/10'
+        ]);
         
         // RiwayatPenjualan::create([
         //     'user_id' => 2,
@@ -417,14 +430,19 @@ class DatabaseSeeder extends Seeder
         //     // 'pesanan_selesai' => ''
         // ]);
         
-        // RiwayatPenjualan::create([
-        //     'user_id' => 3,
-        //     'produk_id' => 3,
-        //     'jumlah_pesanan' => 1,
-        //     'status' => 'Perlu Dikirim',
-        //     'pesanan_dibuat' => '2021/05/25'
-        //     // 'pesanan_selesai' => ''
-        // ]);
+        RiwayatPenjualan::create([
+            'user_id' => 2,
+            'produk_id' => 3,
+            'jumlah_pesanan' => 2,
+            'status' => 'Perlu Dikirim',
+            'alamat' => 'Jalan Kuyz',
+            'no_transaksi' => 'CKWGCASQIVYUVRK5',
+            // 'no_resi' => 'D7JH9X4LWOFT',
+            'jasa_pengiriman' => '8500',
+            'pembayaran' => 'BNI',
+            'pesanan_dibuat' => '2021/05/25'
+            // 'pesanan_selesai' => ''
+        ]);
 
         /* TANGGAL */
         Tanggal::create([

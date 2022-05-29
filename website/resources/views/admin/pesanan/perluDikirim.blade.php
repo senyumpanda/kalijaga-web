@@ -37,9 +37,9 @@
                     <div class="container bungkus-2 mt-3 pb-3" style="border-radius: 25px;">
                         <div class="row">
                             <div class="col-12">
-                                <a href="" style="text-decoration: none;">
 
-                                    @foreach($riwayats as $riwayat)
+                                @foreach($riwayats as $riwayat)
+                                <a href="/a-nota-{{ $riwayat->id }}_p" style="text-decoration: none;">
 
                                     <div class="barang pt-3">
                                         <div class="row text-white">
@@ -55,15 +55,16 @@
                                             </div>
                                             <div class="col-4 text-center pt-3">
                                                 <p>Harga:
-                                                    {{ $riwayat->produk->harga_produk * $riwayat->jumlah_pesanan }}</p>
+                                                    {{ ($riwayat->produk->harga_produk * $riwayat->jumlah_pesanan) + $riwayat->jasa_pengiriman }}
+                                                </p>
                                                 <p>{{ $riwayat->status }}</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    @endforeach
-
                                 </a>
+                                @endforeach
+
                             </div>
                         </div>
                     </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UlasanController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\KeranjangController;
@@ -59,7 +60,19 @@ Route::get('/datapenjualan-urut?t={id}', [AdminController::class, 'penjualan_uru
 Route::get('/a-pesanan1', [AdminController::class, 'pesanan1'])->name('a-pesanan1')->middleware('auth');
 Route::get('/a-pesanan2', [AdminController::class, 'pesanan2'])->name('a-pesanan2')->middleware('auth');
 Route::get('/a-pesanan3', [AdminController::class, 'pesanan3'])->name('a-pesanan3')->middleware('auth');
+// Admin - Ulasan
+Route::get('/a-ulasan', [UlasanController::class, 'index'])->name('a-ulasan')->middleware('auth');
+// Admin - Nota Pesanan 'Perlu Dikirim'
+Route::get('/a-nota-{id}_p', [AdminController::class, 'a_nota_pembelian_p'])->name('a-nota_p')->middleware('auth');
+Route::post('/a-nota-{id}to_d', [AdminController::class, 'a_proses_pengiriman'])->name('a-nota-to_d')->middleware('auth');
+// Admin - Nota Pesanan 'Dikirim'
+Route::get('/a-nota-{id}_d', [AdminController::class, 'a_nota_pembelian_d'])->name('a-nota_d')->middleware('auth');
+// Admin - Nota Pesanan 'Selesai'
+Route::get('/a-nota-{id}_s', [AdminController::class, 'a_nota_pembelian_s'])->name('a-nota_s')->middleware('auth');
 
+// Tambah Ulasan
+Route::post('/ulasan_masuk{id}',[UlasanController::class, 'update'])->name('tambah_ulasan')->middleware('auth')
+;
 // Ubah Akun
 Route::get('/p={id}', [AdminController::class, 'ubah_akun'])->name('ubahakun')->middleware('auth');
 Route::post('/proses{id}ubah', [AdminController::class, 'prosesubah'])->name('prosesubah')->middleware('auth');
@@ -77,8 +90,9 @@ Route::get('/c-keranjang', [CustomerController::class, 'keranjang'])->name('c_ke
 // Customer - Pesananku
 Route::get('/c-pesananku1', [CustomerController::class, 'pesananku1'])->name('c_pesananku1')->middleware('auth');
 Route::get('/c-pesananku2', [CustomerController::class, 'pesananku2'])->name('c_pesananku2')->middleware('auth');
-// Customer - Nota Pesanan Selesai
-Route::get('/nota-{id}', [CustomerController::class, 'nota_pembelian'])->name('nota')->middleware('auth');
+Route::get('/c-pesananku3', [CustomerController::class, 'pesananku3'])->name('c_pesananku3')->middleware('auth');
+// Customer - Nota Pesanan 'Selesai'
+Route::get('/c-nota-{id}_s', [CustomerController::class, 'c_nota_pembelian_s'])->name('c-nota_s')->middleware('auth');
 
 // Customer - Simpan Produk di Keranjang
 Route::get('/tambah{id_produk}keranjang{id_user}', [CustomerController::class, 'tambah_keranjang'])->name('tambah_keranjang')->middleware('auth');

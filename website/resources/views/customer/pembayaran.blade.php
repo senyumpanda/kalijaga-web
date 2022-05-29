@@ -34,13 +34,13 @@
                                         </div>
                                         <div class="col-6 ">
                                             <p class="float-end">
-                                                Rp{{ ($produk->harga_produk * $barang->jumlah_pesanan) + $barang->jasa_pengiriman }}
+                                                Rp{{ (($produk->harga_produk * $barang->jumlah_pesanan) + $barang->jasa_pengiriman) + $random_angka }}
                                             </p>
                                         </div>
                                     </div>
                                     <div class="row text-white pt-3">
                                         <div class="col-12">
-                                            <h6 class="">Bank {{ $barang->pembayaran }}(Virtual Account)</h6>
+                                            <h6 class="">Transfer Bank : {{ $barang->pembayaran }}</h6>
                                         </div>
                                     </div>
                                     <div class="row text-white">
@@ -50,14 +50,13 @@
                                     </div>
                                     <div class="row text-white">
                                         <div class="col-6 mx-auto text-center py-3">
-                                            <h2 class="fw-bold">896 0895 53211453</h2>
+                                            <h2 class="fw-bold">0895 5321 1453 2453</h2>
                                         </div>
                                     </div>
                                     <div class="row mt-4 mb-5 text-center text-white"
                                         style="border-bottom: 3px dashed #DAA7A7;">
                                         <div class="col-12">
-                                            <h6 class="fw-bold">Mohon cek kembali informasi data pada saat melakukan
-                                                transfer !</h6>
+                                            <h6 class="fw-bold">Segera Melakukan Pembayaran 😁😁</h6>
                                         </div>
                                     </div>
                                     <div class="row pt-4" style="height: 2.5rem;">

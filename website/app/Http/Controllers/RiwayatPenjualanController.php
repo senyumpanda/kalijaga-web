@@ -70,7 +70,7 @@ class RiwayatPenjualanController extends Controller
      */
     public function update(UpdateRiwayatPenjualanRequest $request, RiwayatPenjualan $riwayatPenjualan)
     {
-        //
+       //
     }
 
     /**
@@ -83,7 +83,5 @@ class RiwayatPenjualanController extends Controller
     {
         //
     }
-
-    // Produk
     
 }

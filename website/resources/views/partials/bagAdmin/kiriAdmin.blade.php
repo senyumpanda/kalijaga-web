@@ -22,6 +22,10 @@
                                 <i class="bi bi-caret-right-fill"></i>
                                 <a href="/a-pesanan1" class="{{ $akses == 'pesanan' ? 'aktif' : '' }}">Pesanan</a>
                             </li>
+                            <li class="kedua g-0">
+                                <i class="bi bi-caret-right-fill"></i>
+                                <a href="/a-ulasan" class="{{ $akses == 'ulasan' ? 'aktif' : '' }}">Ulasan</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>

@@ -6,7 +6,12 @@
 <!-- Beranda -->
 <div class="container-fluid">
     <div class="row">
+        @if($nama === "Admin")
+        @include('partials.bagAdmin.kiriAdmin')
+        @endif
+        @if($nama === "Customer")
         @include('partials.bagCustomer.kiriCustomer')
+        @endif
 
         <!-- Info Kanan -->
         <div class="menu-kanan col-10 mt-5">
@@ -19,11 +24,15 @@
                                     <ul class="d-flex justify-content-around align-content-center list-judul">
                                         <li>
                                             <a href="/c-pesananku1"
-                                                class="{{ $akses == 'pesananku1' ? 'aktif' : '' }}">Dikirim</a>
+                                                class="{{ $akses == 'pesananku1' ? 'aktif' : '' }}">Proses</a>
                                         </li>
                                         <li>
                                             <a href="/c-pesananku2"
-                                                class="{{ $akses == 'pesananku2' ? 'aktif' : '' }}">Selesai</a>
+                                                class="{{ $akses == 'pesananku2' ? 'aktif' : '' }}">Dikirim</a>
+                                        </li>
+                                        <li>
+                                            <a href="/c-pesananku3"
+                                                class="{{ $akses == 'pesananku3' ? 'aktif' : '' }}">Selesai</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -36,7 +45,7 @@
 
                                 @foreach($produks as $produk)
 
-                                <a href="/nota-{{ $produk->id }}" class="text-white" style="text-decoration: none;">
+                                <a href="/c-nota-{{ $produk->id }}_s" class="text-white" style="text-decoration: none;">
                                     <div class="barang pt-3">
                                         <div class="row text-white">
                                             <div class="col-2 d-flex align-items-center justify-content-center pt-1">

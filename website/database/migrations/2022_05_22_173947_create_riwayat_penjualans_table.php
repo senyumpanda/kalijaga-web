@@ -21,6 +21,7 @@ return new class extends Migration
             $table->integer('jumlah_pesanan');
             $table->string('status')->nullable();
             $table->string('alamat');
+            $table->string('no_transaksi');
             $table->string('no_resi')->nullable();
             $table->string('jasa_pengiriman');
             $table->string('pembayaran');

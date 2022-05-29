@@ -133,7 +133,7 @@ class AdminController extends Controller
             'akses' => 'pesanan',
             'akses_pesanan' => 'dikirim',
             'nama' => 'Admin',
-            'riwayats' => RiwayatPenjualan::where('status', 'Sedang Dikirim')->get()
+            'riwayats' => RiwayatPenjualan::where('status', 'Dikirim')->get()
         ]);
     }
     public function pesanan3()
@@ -143,7 +143,7 @@ class AdminController extends Controller
             'akses' => 'pesanan',
             'akses_pesanan' => 'selesai',
             'nama' => 'Admin',
-            'riwayats' => RiwayatPenjualan::where('status', 'Selesai')->get()
+            'riwayats' => RiwayatPenjualan::where('status', 'Selesai')->get(),
         ]);
     }
 
@@ -178,6 +178,59 @@ class AdminController extends Controller
         {
             return redirect('/customer');
         }
+    }
+
+    public function a_nota_pembelian_p($id)
+    {
+        $riwayat = RiwayatPenjualan::where('id', $id)->where('status', 'Perlu Dikirim')->get();
+        return view('nota.a_proses',[
+            'fileCSS' => 'css/nota.css',
+            'akses' => 'keranjang',
+            'nama' => 'Admin',
+            'akses' => 'pesanan',
+            'riwayats' => RiwayatPenjualan::where('id', $id)->where('status', 'Perlu Dikirim')->get(),
+            'jasa_kirim' => JasaPengiriman::firstWhere('biaya_jasa_kirim', $riwayat[0]->jasa_pengiriman)->nama_jasa_kirim,
+        ]);
+    }
+
+    public function a_proses_pengiriman(Request $request, $id)
+    {
+        // pesanan_selesai
+        $pesanan_selesai = date('Y-m-d');
+
+        // Update data di Riwayat Penjualan
+        RiwayatPenjualan::where('id', $id)->update([
+                                                        'status' => 'Dikirim',
+                                                        'no_resi' => Str::of($request->no_resi)->upper(),
+                                                        'pesanan_selesai' => $pesanan_selesai
+                                                ]);
+        return redirect('/a-pesanan2');
+    }
+
+    public function a_nota_pembelian_d($id)
+    {
+        $riwayat = RiwayatPenjualan::where('id', $id)->where('status', 'Dikirim')->get();
+        return view('nota.dikirim',[
+            'fileCSS' => 'css/nota.css',
+            'akses' => 'keranjang',
+            'nama' => 'Admin',
+            'akses' => 'pesanan',
+            'riwayats' => RiwayatPenjualan::where('id', $id)->where('status', 'Dikirim')->get(),
+            'jasa_kirim' => JasaPengiriman::firstWhere('biaya_jasa_kirim', $riwayat[0]->jasa_pengiriman)->nama_jasa_kirim,
+        ]);
+    }
+
+    public function a_nota_pembelian_s($id)
+    {
+        $riwayat = RiwayatPenjualan::where('id', $id)->where('status', 'Selesai')->get();
+        return view('nota.selesai',[
+            'fileCSS' => 'css/nota.css',
+            'akses' => 'keranjang',
+            'nama' => 'Admin',
+            'akses' => 'pesanan',
+            'riwayats' => RiwayatPenjualan::where('id', $id)->where('status', 'Selesai')->get(),
+            'jasa_kirim' => JasaPengiriman::firstWhere('biaya_jasa_kirim', $riwayat[0]->jasa_pengiriman)->nama_jasa_kirim,
+        ]);
     }
 
 }

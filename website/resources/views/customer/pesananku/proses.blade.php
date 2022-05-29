@@ -53,12 +53,9 @@
                                             </p>
                                         </div>
                                         <div class="col-4 p-2 d-flex align-items-center flex-column text-center">
-                                            <p>Resi:
-                                                <strong>
-                                                    {{ $produk->no_resi }}
-                                                </strong>
+                                            <p>Harga:
+                                                {{ ($produk->produk->harga_produk * $produk->jumlah_pesanan) + $produk->jasa_pengiriman }}
                                             </p>
-                                            <p>Harga: {{ $produk->produk->harga_produk * $produk->jumlah_pesanan }}</p>
                                             <p>{{ $produk->status }}</p>
                                         </div>
                                     </div>
