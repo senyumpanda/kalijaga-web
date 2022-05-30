@@ -95,12 +95,21 @@ class AdminController extends Controller
     {
         // dd($slug, $request, $request['namaProduk'], $request['hargaProduk']);
         $ubah_data = Produk::all()->firstWhere('slug_produk', $slug);
+
+        $validatedData = $request->validate([
+            'namaProduk' => 'required|min:5|max:255',
+            'stokProduk' => 'required',
+            'hargaProduk' => 'required',
+            'deskripsiProduk' => 'required',
+            'gambarProduk' => 'image|file|max:1024'
+        ]);
         // dd($ubah_data);
         $perubahan = [
-            'nama_produk' => $request['namaProduk'],
-            'stok_produk' => $request['stokProduk'],
-            'harga_produk'=> $request['hargaProduk'],
-            'deskripsi_produk' => $request['deskripsiProduk']
+            'nama_produk' => $validatedData['namaProduk'],
+            'stok_produk' => $validatedData['stokProduk'],
+            'harga_produk'=> $validatedData['hargaProduk'],
+            'deskripsi_produk' => $validatedData['deskripsiProduk'],
+            'gambar' => $request->file('gambarProduk')->store('img'),
         ];
         $ubah_data->update($perubahan);
         return redirect('/a-produk');
