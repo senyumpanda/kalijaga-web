@@ -33,9 +33,15 @@
                                                         </div>
                                                         <div class="col-8">
                                                             <div class="input-group pt-3 mb-3 text-white">
-                                                                <input type="file" class="form-control text-white"
+                                                                <input type="file"
+                                                                    class="form-control text-white @error('gambarProduk') is-invalid @enderror"
                                                                     id="uploadGambar" autocomplete="off"
                                                                     name="gambarProduk">
+                                                                @error('gambarProduk')
+                                                                <div class="invalid-feedback">
+                                                                    {{ $message }}
+                                                                </div>
+                                                                @enderror
                                                             </div>
                                                         </div>
                                                     </div>
@@ -65,9 +71,16 @@
                                                             <label for="namaProduk">Nama Produk</label>
                                                         </div>
                                                         <div class="col-9">
-                                                            <input type="text" class="form-control" id="namaProduk"
-                                                                autocomplete="off" value="{{ old('namaProduk') }}"
-                                                                name="namaProduk" required>
+                                                            <input type="text"
+                                                                class="form-control @error('namaProduk') is-invalid @enderror"
+                                                                id="namaProduk" autocomplete="off"
+                                                                value="{{ old('namaProduk') }}" name="namaProduk"
+                                                                required>
+                                                            @error('namaProduk')
+                                                            <div class="invalid-feedback">
+                                                                {{ $message }}
+                                                            </div>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                 </div>
@@ -78,7 +91,8 @@
                                                         </div>
                                                         <div class="col-9">
                                                             <input type="text" class="form-control" name="stokProduk"
-                                                                autocomplete="off" value="{{ old('stokProduk') }}" id="stokProduk" required>
+                                                                autocomplete="off" value="{{ old('stokProduk') }}"
+                                                                id="stokProduk" required>
                                                         </div>
                                                     </div>
                                                 </div>

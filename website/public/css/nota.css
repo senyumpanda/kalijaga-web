@@ -130,11 +130,13 @@ body {
     border-radius: 15px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, .5);
     transition: 0.7s cubic-bezier(0.47, 0, 0.745, 0.715);
-    transform: translateY(-0.85rem);
+    width: 13.5rem;
+    height: 2.8rem;
+    transform: translateY(-2rem);
 }
 
 .btn-custom:hover {
-    transform: translateY(-0.7rem);
+    transform: translateY(-1.7rem);
 }
 
 .bdr {

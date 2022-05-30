@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Produk;
@@ -13,6 +14,7 @@ use App\Models\JasaPengiriman;
 use App\Models\AksesPembayaran;
 use App\Models\AksesPengiriman;
 use App\Models\RiwayatPenjualan;
+use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
@@ -50,14 +52,22 @@ class AdminController extends Controller
     
     public function tambah_produk_post(Request $request)
     {
-        // dd($request);
+        // dd($request->file('gambarProduk'));
+        $validatedData = $request->validate([
+            'namaProduk' => 'required|min:5|max:255',
+            'stokProduk' => 'required',
+            'hargaProduk' => 'required',
+            'deskripsiProduk' => 'required',
+            'gambarProduk' => 'image|file|max:1024'
+        ]);
+
         $tambahan = [
-            'nama_produk' => $request['namaProduk'],
-            'stok_produk' => $request['stokProduk'],
-            'harga_produk' => $request['hargaProduk'],
-            'deskripsi_produk' => $request['deskripsiProduk'],
-            'gambar' => 'img/'. $request['gambarProduk'],
-            'slug_produk' => explode(" ",strtolower($request['namaProduk']))[0]
+            'nama_produk' => $validatedData['namaProduk'],
+            'stok_produk' => $validatedData['stokProduk'],
+            'harga_produk' => $validatedData['hargaProduk'],
+            'deskripsi_produk' => $validatedData['deskripsiProduk'],
+            'gambar' => $request->file('gambarProduk')->store('img'),
+            'slug_produk' => explode(" ",strtolower($validatedData['namaProduk']))[0]
         ];
 
         // dd($tambahan);

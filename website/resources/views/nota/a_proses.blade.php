@@ -247,7 +247,7 @@
 
                             <div class="tbl-kirim">
                                 <button type="submit" class="btn btn-custom text-white"
-                                    style="width: 13.5rem; height: 2.8rem;">
+                                    style="">
                                     <p class="pt-1">
                                         KIRIM
                                     </p>

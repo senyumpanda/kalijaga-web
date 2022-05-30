@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
             'stok_produk' => 25,
             'harga_produk' => 10000,
             'deskripsi_produk' => 'kami membuatnya dengan bunga mawar pilihan, dan kita olah dengan cara tradisional tentunya higienis dan terjamin sehingga menimbulkan rasa yang khas dan nikmat untuk di minum',
-            'gambar' => 'img/teh.png',
+            'gambar' => 'storage/img/teh.png',
             'slug_produk' => 'teh1'
         ]);
 
@@ -114,7 +114,7 @@ class DatabaseSeeder extends Seeder
             'stok_produk' => 20,
             'harga_produk' => 9000,
             'deskripsi_produk' => 'kami membuatnya dengan bunga mawar pilihan, dan kita olah dengan cara tradisional tentunya higienis dan terjamin serta tanpa bahan pengawet kimia',
-            'gambar' => 'img/teh2.png',
+            'gambar' => 'storage/img/teh2.png',
             'slug_produk' => 'teh2'
         ]);
 
@@ -123,7 +123,7 @@ class DatabaseSeeder extends Seeder
             'stok_produk' => 10,
             'harga_produk' => 18000,
             'deskripsi_produk' => 'kami membuatnya dengan bunga mawar pilihan, tahan lama dan pasti membuat para lawan jenis melirik kepada anda',
-            'gambar' => 'img/parfum.png',
+            'gambar' => 'storage/img/parfum.png',
             'slug_produk' => 'parfum'
         ]);
 

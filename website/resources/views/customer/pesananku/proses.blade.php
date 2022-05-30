@@ -56,7 +56,7 @@
                                             <p>Harga:
                                                 {{ ($produk->produk->harga_produk * $produk->jumlah_pesanan) + $produk->jasa_pengiriman }}
                                             </p>
-                                            <p>{{ $produk->status }}</p>
+                                            <p>Menunggu Pembayaran</p>
                                         </div>
                                     </div>
                                 </div>
